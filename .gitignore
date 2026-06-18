@@ -2,5 +2,6 @@
 /terraform-templates/.terraform.lock.hcl
 /terraform-templates/tfstate.backup
 /terraform-templates/terraform.tfstate
+/terraform-templates/terraform.tfstate.backup
 /terraform-templates/*.tfplan
 /terraform-templates/*.tfplan.backup

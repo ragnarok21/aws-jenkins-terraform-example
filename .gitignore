@@ -3,3 +3,4 @@
 /terraform-templates/tfstate.backup
 /terraform-templates/terraform.tfstate
 /terraform-templates/*.tfplan
+/terraform-templates/*.tfplan.backup

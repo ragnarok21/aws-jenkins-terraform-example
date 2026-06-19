@@ -27,9 +27,6 @@ Comando cliente de ejemplo para listar los s3 existentes:
 
 aws s3 ls --profile floci --endpoint-url http://localhost:4566
 
-
-
-
 Comandos para terraform:
 
 - terraform init

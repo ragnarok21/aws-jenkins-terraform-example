@@ -9,14 +9,14 @@ terraform {
 
 provider "aws" {
   region                      = var.aws_region
-  access_key                  = "test"
-  secret_key                  = "test"
+  access_key                  = var.aws_access_key
+  secret_key                  = var.aws_secret_key
   skip_credentials_validation = true
   skip_metadata_api_check     = true
   skip_requesting_account_id  = true
 
   endpoints {
-    dynamodb = "http://localhost:4566"
+    dynamodb = var.aws_endpoint_url
   }
 }
 
@@ -26,6 +26,26 @@ variable "aws_region" {
   description = "Región AWS donde se desplegará DynamoDB"
   type        = string
   default     = "us-east-1"
+}
+
+variable "aws_access_key" {
+  description = "AWS Access Key ID (desde variable de entorno AWS_ACCESS_KEY_ID)"
+  type        = string
+  sensitive   = true
+  default     = "test"
+}
+
+variable "aws_secret_key" {
+  description = "AWS Secret Access Key (desde variable de entorno AWS_SECRET_ACCESS_KEY)"
+  type        = string
+  sensitive   = true
+  default     = "test"
+}
+
+variable "aws_endpoint_url" {
+  description = "Endpoint URL para localstack/floci (desde variable de entorno AWS_ENDPOINT_URL)"
+  type        = string
+  default     = "http://localhost:4566"
 }
 
 variable "table_name" {
